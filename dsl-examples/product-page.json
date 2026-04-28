@@ -1,0 +1,62 @@
+{
+  "page": {
+    "name": "ProductDetail",
+    "dsl_version": "0.1.0",
+    "layout": "column",
+    "children": [
+      {
+        "type": "swiper",
+        "props": {
+          "indicator_dots": true,
+          "autoplay": true,
+          "interval": 3000,
+          "images": [
+            "/static/products/prod-1.jpg",
+            "/static/products/prod-2.jpg",
+            "/static/products/prod-3.jpg"
+          ]
+        }
+      },
+      {
+        "type": "section",
+        "props": { "padding": "20rpx" },
+        "children": [
+          {
+            "type": "text",
+            "props": {
+              "content": "{{product.title}}",
+              "style": { "font_size": "32rpx", "font_weight": "bold" }
+            }
+          },
+          {
+            "type": "text",
+            "props": {
+              "content": "¥{{product.price}}",
+              "style": { "font_size": "40rpx", "color": "#e4393c", "margin_top": "10rpx" }
+            }
+          },
+          {
+            "type": "text",
+            "props": {
+              "content": "{{product.description}}",
+              "style": { "font_size": "26rpx", "color": "#999", "margin_top": "16rpx" }
+            }
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "props": {
+          "text": "立即购买",
+          "style": {
+            "background_color": "#e4393c",
+            "color": "#fff",
+            "border_radius": "8rpx",
+            "margin": "20rpx"
+          },
+          "onTap": "handleBuyNow"
+        }
+      }
+    ]
+  }
+}

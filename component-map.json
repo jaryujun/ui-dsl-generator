@@ -1,0 +1,72 @@
+{
+  "version": "0.1.0",
+  "description": "DSL node type to uni-app component mapping",
+  "mappings": [
+    {
+      "dsl_type": "text",
+      "component": "view",
+      "inner_tag": "text",
+      "props_mapping": {
+        "content": "text content",
+        "style": "style binding"
+      }
+    },
+    {
+      "dsl_type": "button",
+      "component": "button",
+      "props_mapping": {
+        "text": "button text",
+        "style": "style binding",
+        "onTap": "@click handler"
+      }
+    },
+    {
+      "dsl_type": "image",
+      "component": "image",
+      "props_mapping": {
+        "src": "src attribute",
+        "mode": "mode attribute",
+        "style": "style binding"
+      }
+    },
+    {
+      "dsl_type": "swiper",
+      "component": "swiper",
+      "child_component": "swiper-item",
+      "props_mapping": {
+        "indicator_dots": "indicator-dots",
+        "autoplay": "autoplay",
+        "interval": "interval",
+        "images": "v-for loop source"
+      }
+    },
+    {
+      "dsl_type": "section",
+      "component": "view",
+      "props_mapping": {
+        "style": "style binding"
+      },
+      "is_container": true
+    },
+    {
+      "dsl_type": "input",
+      "component": "input",
+      "props_mapping": {
+        "placeholder": "placeholder attribute",
+        "type": "type attribute",
+        "style": "style binding",
+        "onInput": "@input handler"
+      }
+    },
+    {
+      "dsl_type": "list",
+      "component": "view",
+      "child_component": "view",
+      "props_mapping": {
+        "data_source": "v-for loop source",
+        "style": "style binding"
+      },
+      "is_container": true
+    }
+  ]
+}
