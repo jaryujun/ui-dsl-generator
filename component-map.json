@@ -1,72 +1,90 @@
 {
-  "version": "0.1.0",
-  "description": "DSL node type to uni-app component mapping",
+  "version": "0.2.0",
+  "description": "DSL node type to TDesign (uni-app) component mapping",
+  "component_library": "tdesign-miniprogram",
   "mappings": [
     {
       "dsl_type": "text",
-      "component": "view",
-      "inner_tag": "text",
+      "component": "t-text",
       "props_mapping": {
-        "content": "text content",
-        "style": "style binding"
+        "content": "text content (inner)",
+        "style": "class/style binding"
       }
     },
     {
       "dsl_type": "button",
-      "component": "button",
+      "component": "t-button",
       "props_mapping": {
-        "text": "button text",
-        "style": "style binding",
-        "onTap": "@click handler"
+        "text": "content",
+        "variant": "variant (base/outline/ghost/dark)",
+        "theme": "theme (primary/danger/warning/success)",
+        "size": "size (small/medium/large)",
+        "block": "block",
+        "onTap": "bind:click handler"
       }
     },
     {
       "dsl_type": "image",
-      "component": "image",
+      "component": "t-image",
       "props_mapping": {
-        "src": "src attribute",
-        "mode": "mode attribute",
-        "style": "style binding"
+        "src": "src",
+        "mode": "mode (aspectFit/aspectFill/fill)",
+        "shape": "shape (round/square)"
       }
     },
     {
       "dsl_type": "swiper",
-      "component": "swiper",
-      "child_component": "swiper-item",
+      "component": "t-swiper",
       "props_mapping": {
-        "indicator_dots": "indicator-dots",
-        "autoplay": "autoplay",
-        "interval": "interval",
-        "images": "v-for loop source"
+        "images": "list data source",
+        "navigation": "navigation type",
+        "autoplay": "autoplay"
       }
     },
     {
       "dsl_type": "section",
       "component": "view",
       "props_mapping": {
-        "style": "style binding"
+        "style": "class/style binding"
       },
       "is_container": true
     },
     {
       "dsl_type": "input",
-      "component": "input",
+      "component": "t-input",
       "props_mapping": {
-        "placeholder": "placeholder attribute",
-        "type": "type attribute",
-        "style": "style binding",
-        "onInput": "@input handler"
+        "placeholder": "placeholder",
+        "value": "value",
+        "type": "type (text/number)",
+        "onInput": "bind:change handler"
       }
     },
     {
       "dsl_type": "list",
-      "component": "view",
-      "child_component": "view",
+      "component": "t-cell-group",
+      "child_component": "t-cell",
       "props_mapping": {
         "data_source": "v-for loop source",
-        "style": "style binding"
+        "title": "cell title"
       },
       "is_container": true
+    },
+    {
+      "dsl_type": "tag",
+      "component": "t-tag",
+      "props_mapping": {
+        "content": "tag text",
+        "theme": "theme (default/primary/warning/danger/success)",
+        "variant": "variant (dark/light-outline/light)"
+      }
+    },
+    {
+      "dsl_type": "icon",
+      "component": "t-icon",
+      "props_mapping": {
+        "name": "icon name",
+        "size": "icon size"
+      }
     }
   ]
 }

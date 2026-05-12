@@ -1,0 +1,21 @@
+{
+  "name": "ui-dsl-generator",
+  "version": "0.1.0",
+  "description": "AI-powered DSL-driven UI page generator for uni-app",
+  "main": "dist/index.js",
+  "bin": {
+    "ui-dsl-generator": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "demo": "tsx src/cli.ts",
+    "test": "vitest run"
+  },
+  "keywords": ["dsl", "uni-app", "ai", "code-generator", "vue"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "tsx": "^4.7.0",
+    "vitest": "^1.6.0"
+  }
+}

@@ -1,20 +1,19 @@
 {
   "page": {
     "name": "ProductDetail",
-    "dsl_version": "0.1.0",
+    "dsl_version": "0.2.0",
     "layout": "column",
     "children": [
       {
         "type": "swiper",
         "props": {
-          "indicator_dots": true,
-          "autoplay": true,
-          "interval": 3000,
           "images": [
             "/static/products/prod-1.jpg",
             "/static/products/prod-2.jpg",
             "/static/products/prod-3.jpg"
-          ]
+          ],
+          "navigation": "dots",
+          "autoplay": true
         }
       },
       {
@@ -24,22 +23,30 @@
           {
             "type": "text",
             "props": {
-              "content": "{{product.title}}",
-              "style": { "font_size": "32rpx", "font_weight": "bold" }
+              "content": "TDesign 高品质无线蓝牙耳机",
+              "style": { "font_size": "32rpx", "font_weight": "bold", "color": "#333" }
             }
           },
           {
             "type": "text",
             "props": {
-              "content": "¥{{product.price}}",
-              "style": { "font_size": "40rpx", "color": "#e4393c", "margin_top": "10rpx" }
+              "content": "¥299.00",
+              "style": { "font_size": "40rpx", "color": "#e4393c", "margin_top": "16rpx" }
+            }
+          },
+          {
+            "type": "tag",
+            "props": {
+              "content": "新品",
+              "theme": "primary",
+              "variant": "light"
             }
           },
           {
             "type": "text",
             "props": {
-              "content": "{{product.description}}",
-              "style": { "font_size": "26rpx", "color": "#999", "margin_top": "16rpx" }
+              "content": "超长续航 · 主动降噪 · 高清通话",
+              "style": { "font_size": "24rpx", "color": "#999", "margin_top": "12rpx" }
             }
           }
         ]
@@ -48,12 +55,9 @@
         "type": "button",
         "props": {
           "text": "立即购买",
-          "style": {
-            "background_color": "#e4393c",
-            "color": "#fff",
-            "border_radius": "8rpx",
-            "margin": "20rpx"
-          },
+          "theme": "primary",
+          "size": "large",
+          "block": true,
           "onTap": "handleBuyNow"
         }
       }
